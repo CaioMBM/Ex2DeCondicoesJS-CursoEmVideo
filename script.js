@@ -20,10 +20,13 @@ function verificar(){
 
     // Pegando onde vai mostrar a imagem
     var img = document.querySelector('img')
-    
 
+    // Caso a idade seja inválida
+    if (data > anoAtual){
+        window.alert("Data inexistente, tente novamente!")
+    } 
     // MASCULINO
-    if (sexo[0].checked && idade <= 4){
+    else if (sexo[0].checked && idade <= 4){
         mensagem.innerText = `Detectamos alguém do sexo masculino e com ${idade} anos.`
         img.src = "img/bebe.jpg"
     } 
@@ -45,7 +48,7 @@ function verificar(){
     }
 
     // FEMININO
-    if (sexo[1].checked && idade <= 4){
+    else if (sexo[1].checked && idade <= 4){
         mensagem.innerText = `Detectamos alguém do sexo feminino e com ${idade} anos.`
         img.src = "img/bebe.jpg"
     } 
